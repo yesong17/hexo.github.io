@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yesong17.github.io/hexo.github.io/"/>
-  <updated>2019-09-05T02:44:48.826Z</updated>
+  <updated>2019-11-24T05:48:54.917Z</updated>
   <id>https://yesong17.github.io/hexo.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yesong17.github.io/hexo.github.io/2019/11/23/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/"/>
     <id>https://yesong17.github.io/hexo.github.io/2019/11/23/Fan主题安装/</id>
     <published>2019-11-23T14:45:11.762Z</published>
-    <updated>2019-09-05T02:44:48.826Z</updated>
+    <updated>2019-11-24T05:48:54.917Z</updated>
     
     <content type="html"><![CDATA[<p></p><h1 align="center">Fan</h1><p></p><p align="center">这是一个深色主题，如梦幻般的星空，群星闪烁。</p><p><a href="https://www.lvfan.xyz/" target="_blank" rel="noopener">Preview</a>   </p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/fan-lv/Fan.git themes/Fan</span><br></pre></td></tr></table></figure><p>修改位于博客根目录下的<code>_config.yml</code>内的<code>theme</code>选项值为<code>Fan</code></p><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/Fan</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><h2 id="需要的依赖包"><a href="#需要的依赖包" class="headerlink" title="需要的依赖包"></a>需要的依赖包</h2><ul><li>hexo-renderer-jade</li><li>hexo-renderer-stylus</li></ul><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul><li>如果报错 appId undefined,需要把 themes-&gt;_config.yml 中 algolia_search:enable 改成 false</li></ul><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul><li>支持文章置顶功能，在需要置顶的文章加入 top: 1，数值越大越靠前。</li></ul><h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a></p>]]></content>
     
@@ -32,8 +32,7 @@
         &lt;p&gt;&lt;/p&gt;&lt;h1 align=&quot;center&quot;&gt;Fan&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;这是一个深色主题，如梦幻般的星空，群星闪烁。&lt;/p&gt;
 
-
-&lt;p&gt;&lt;a href=&quot;https://www.lvfan.xyz/&quot; target=&quot;_blank&quot;
+&lt;p&gt;&lt;a href=&quot;https://www.lvfan.xyz/&quot; target=&quot;_blank&quot; 
       
     
     </summary>
@@ -43,19 +42,19 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>正则表达式</title>
     <link href="https://yesong17.github.io/hexo.github.io/2019/11/23/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>https://yesong17.github.io/hexo.github.io/2019/11/23/常用正则表达式/</id>
     <published>2019-11-23T14:42:36.899Z</published>
-    <updated>2019-11-23T14:31:27.599Z</updated>
+    <updated>2019-11-24T05:49:01.032Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><p>开源中国提供了强大的<a href="http://tool.oschina.net/regex/" target="_blank" rel="noopener"><u>正则测试工具</u></a>,让我们一起来学吧！</p><p><u>废话不多说，直接来点硬核！！</u></p><table><thead><tr><th style="text-align:center">匹配内容</th><th style="text-align:left">正则表达式</th></tr></thead><tbody><tr><td style="text-align:center">汉字</td><td style="text-align:left"><code>^[\u4e00-\u9fa5]{0,}$</code></td></tr><tr><td style="text-align:center">空白行</td><td style="text-align:left"><code>\n\s*\r</code></td></tr><tr><td style="text-align:center">邮箱地址</td><td style="text-align:left"><code>/.+@.+\.[a-z]+/</code></td></tr><tr><td style="text-align:center">手机号</td><td style="text-align:left">`^1(3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9)\d{9}$`</td></tr><tr><td style="text-align:center">邮政编码</td><td style="text-align:left"><code>[1-9]\d{5}(?!\d)</code></td></tr><tr><td style="text-align:center">身份证号</td><td style="text-align:left"><code>^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]</code></td></tr><tr><td style="text-align:center">通用时间</td><td style="text-align:left">`(20\d{2}([.-/</td><td>年月\s]{1,3}\d{1,2}){2}日?(\s?\d{2}:\d{2}(:\d{2})?)?)</td><td>(\d{1,2}\s?(分钟</td><td>小时</td><td>天))`</td></tr><tr><td style="text-align:center">整数</td><td style="text-align:left"><code>^-?[1-9]\d*$</code></td></tr><tr><td style="text-align:center">域名</td><td style="text-align:left">`^((http://)</td><td>(https://))?(a-zA-Z0-9?.)+[a-zA-Z]{2,6}(/)`</td></tr><tr><td style="text-align:center">IP</td><td style="text-align:left">`((?:(?:25[0-5]</td><td>2[0-4]\d</td><td>[01]?\d?\d).){3}(?:25[0-5]</td><td>2[0-4]\d</td><td>[01]?\d?\d))`</td></tr><tr><td style="text-align:center">HH:mm:ss</td><td style="text-align:left">`([0-1][0-9]</td><td>2[0-3]):([0-5][0-9]):([0-5][0-9])`</td></tr></tbody></table><p>以上是整理的一些正则，有错请指正！！</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><p>开源中国提供了强大的<font color="red"><a href="http://tool.oschina.net/regex/" target="_blank" rel="noopener"><u>正则测试工具</u></a></font>,让我们一起来学吧！</p><font color="red" size="10">废话不多说，直接来点硬核！！</font><table><thead><tr><th style="text-align:center">匹配内容</th><th style="text-align:left">正则表达式</th></tr></thead><tbody><tr><td style="text-align:center">汉字</td><td style="text-align:left"><code>^[\u4e00-\u9fa5]{0,}$</code></td></tr><tr><td style="text-align:center">空白行</td><td style="text-align:left"><code>\n\s*\r</code></td></tr><tr><td style="text-align:center">邮箱地址</td><td style="text-align:left"><code>/.+@.+\.[a-z]+/</code></td></tr><tr><td style="text-align:center">手机号</td><td style="text-align:left">`^1(3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9)\d{9}$`</td></tr><tr><td style="text-align:center">邮政编码</td><td style="text-align:left"><code>[1-9]\d{5}(?!\d)</code></td></tr><tr><td style="text-align:center">身份证号</td><td style="text-align:left"><code>^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]</code></td></tr><tr><td style="text-align:center">通用时间</td><td style="text-align:left">`(20\d{2}([.-/</td><td>年月\s]{1,3}\d{1,2}){2}日?(\s?\d{2}:\d{2}(:\d{2})?)?)</td><td>(\d{1,2}\s?(分钟</td><td>小时</td><td>天))`</td></tr><tr><td style="text-align:center">整数</td><td style="text-align:left"><code>^-?[1-9]\d*$</code></td></tr><tr><td style="text-align:center">域名</td><td style="text-align:left">`^((http://)</td><td>(https://))?(a-zA-Z0-9?.)+[a-zA-Z]{2,6}(/)`</td></tr><tr><td style="text-align:center">IP</td><td style="text-align:left">`((?:(?:25[0-5]</td><td>2[0-4]\d</td><td>[01]?\d?\d).){3}(?:25[0-5]</td><td>2[0-4]\d</td><td>[01]?\d?\d))`</td></tr><tr><td style="text-align:center">HH:mm:ss</td><td style="text-align:left">`([0-1][0-9]</td><td>2[0-3]):([0-5][0-9]):([0-5][0-9])`</td></tr></tbody></table><p>以上是整理的一些正则，有错请指正！！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;常用正则表达式&quot;&gt;&lt;a href=&quot;#常用正则表达式&quot; class=&quot;headerlink&quot; title=&quot;常用正则表达式&quot;&gt;&lt;/a&gt;常用正则表达式&lt;/h3&gt;&lt;p&gt;开源中国提供了强大的&lt;a href=&quot;http://tool.oschina.net/regex/&quot;
+        &lt;h3 id=&quot;常用正则表达式&quot;&gt;&lt;a href=&quot;#常用正则表达式&quot; class=&quot;headerlink&quot; title=&quot;常用正则表达式&quot;&gt;&lt;/a&gt;常用正则表达式&lt;/h3&gt;&lt;p&gt;开源中国提供了强大的&lt;font color=&quot;red&quot;&gt;&lt;a href=&quot;http://tool.o
       
     
     </summary>

@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Hello World | 叶颂</title>
+  <title>正则表达式 | 叶颂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YeSong's Blog">
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="常用正则表达式开源中国提供了强大的正则测试工具,让我们一起来学吧！ 废话不多说，直接来点硬核！！       匹配内容 正则表达式     汉字 ^[\u4e00-\u9fa5]{0,}$   空白行 \n\s*\r   邮箱地址 /.+@.+\.[a-z]+/   手机号 `^1(3 4 5 6 7 8 9)\d{9}$`   邮政编码 [1-9]\d{5}(?!\d)   身份证号 ^(\d{">
+<meta name="keywords" content="正则">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://yesong17.github.io/2019/05/01/hello-world/index.html">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="https://yesong17.github.io/2020/02/28/常用正则表达式/index.html">
 <meta property="og:site_name" content="叶颂">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="常用正则表达式开源中国提供了强大的正则测试工具,让我们一起来学吧！ 废话不多说，直接来点硬核！！       匹配内容 正则表达式     汉字 ^[\u4e00-\u9fa5]{0,}$   空白行 \n\s*\r   邮箱地址 /.+@.+\.[a-z]+/   手机号 `^1(3 4 5 6 7 8 9)\d{9}$`   邮政编码 [1-9]\d{5}(?!\d)   身份证号 ^(\d{">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-05T09:29:44.876Z">
+<meta property="og:updated_time" content="2020-02-28T02:22:26.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="常用正则表达式开源中国提供了强大的正则测试工具,让我们一起来学吧！ 废话不多说，直接来点硬核！！       匹配内容 正则表达式     汉字 ^[\u4e00-\u9fa5]{0,}$   空白行 \n\s*\r   邮箱地址 /.+@.+\.[a-z]+/   手机号 `^1(3 4 5 6 7 8 9)\d{9}$`   邮政编码 [1-9]\d{5}(?!\d)   身份证号 ^(\d{">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -109,20 +110,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-常用正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      Hello World
+      正则表达式
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-05-01
+          <i class="fa fa-calendar"></i>  2020-02-28
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -138,21 +139,87 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ls -lh</span><br></pre></td></tr></table></figure>
+            <h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><p>开源中国提供了强大的<font color="red"><a href="http://tool.oschina.net/regex/" target="_blank" rel="noopener"><u>正则测试工具</u></a></font>,让我们一起来学吧！</p>
+<font color="red" size="10">废话不多说，直接来点硬核！！</font>
+
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">匹配内容</th>
+<th style="text-align:left">正则表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">汉字</td>
+<td style="text-align:left"><code>^[\u4e00-\u9fa5]{0,}$</code></td>
+</tr>
+<tr>
+<td style="text-align:center">空白行</td>
+<td style="text-align:left"><code>\n\s*\r</code></td>
+</tr>
+<tr>
+<td style="text-align:center">邮箱地址</td>
+<td style="text-align:left"><code>/.+@.+\.[a-z]+/</code></td>
+</tr>
+<tr>
+<td style="text-align:center">手机号</td>
+<td style="text-align:left">`^1(3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9)\d{9}$`</td>
+</tr>
+<tr>
+<td style="text-align:center">邮政编码</td>
+<td style="text-align:left"><code>[1-9]\d{5}(?!\d)</code></td>
+</tr>
+<tr>
+<td style="text-align:center">身份证号</td>
+<td style="text-align:left"><code>^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">通用时间</td>
+<td style="text-align:left">`(20\d{2}([.-/</td>
+<td>年月\s]{1,3}\d{1,2}){2}日?(\s?\d{2}:\d{2}(:\d{2})?)?)</td>
+<td>(\d{1,2}\s?(分钟</td>
+<td>小时</td>
+<td>天))`</td>
+</tr>
+<tr>
+<td style="text-align:center">整数</td>
+<td style="text-align:left"><code>^-?[1-9]\d*$</code></td>
+</tr>
+<tr>
+<td style="text-align:center">域名</td>
+<td style="text-align:left">`^((http://)</td>
+<td>(https://))?(a-zA-Z0-9?.)+[a-zA-Z]{2,6}(/)`</td>
+</tr>
+<tr>
+<td style="text-align:center">IP</td>
+<td style="text-align:left">`((?:(?:25[0-5]</td>
+<td>2[0-4]\d</td>
+<td>[01]?\d?\d).){3}(?:25[0-5]</td>
+<td>2[0-4]\d</td>
+<td>[01]?\d?\d))`</td>
+</tr>
+<tr>
+<td style="text-align:center">HH:mm:ss</td>
+<td style="text-align:left">`([0-1][0-9]</td>
+<td>2[0-3]):([0-5][0-9]):([0-5][0-9])`</td>
+</tr>
+</tbody>
+</table>
+<p>以上是整理的一些正则，有错请指正！！</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年09月05日 17:29</p>
-        <p>原始链接： <a class="post-url" href="/2019/05/01/hello-world/" title="Hello World">https://yesong17.github.io/2019/05/01/hello-world/</a></p>
+        <p>最后更新： 2020年02月28日 10:22</p>
+        <p>原始链接： <a class="post-url" href="/2020/02/28/常用正则表达式/" title="正则表达式">https://yesong17.github.io/2020/02/28/常用正则表达式/</a></p>
         <footer>
             <a href="https://yesong17.github.io">
                 <img src="/images/logo.png" alt="Ys">
@@ -209,7 +276,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yesong17.github.io/2019/05/01/hello-world/&title=《Hello World》 — 叶颂&pic=https://yesong17.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yesong17.github.io/2020/02/28/常用正则表达式/&title=《正则表达式》 — 叶颂&pic=https://yesong17.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -219,22 +286,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yesong17.github.io/2019/05/01/hello-world/&title=《Hello World》 — 叶颂&source=一定要爱上妾身哦" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yesong17.github.io/2020/02/28/常用正则表达式/&title=《正则表达式》 — 叶颂&source=一定要爱上妾身哦" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yesong17.github.io/2019/05/01/hello-world/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yesong17.github.io/2020/02/28/常用正则表达式/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — 叶颂&url=https://yesong17.github.io/2019/05/01/hello-world/&via=https://yesong17.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《正则表达式》 — 叶颂&url=https://yesong17.github.io/2020/02/28/常用正则表达式/&via=https://yesong17.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yesong17.github.io/2019/05/01/hello-world/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yesong17.github.io/2020/02/28/常用正则表达式/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -244,7 +311,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yesong17.github.io/2019/05/01/hello-world/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yesong17.github.io/2020/02/28/常用正则表达式/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -253,6 +320,13 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/正则/" class="color3">正则</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -262,23 +336,28 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用正则表达式"><span class="post-toc-text">常用正则表达式</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/09/05/My-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/28/存储过程/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          O My World
+          储存过程
         
       </span>
     </a>
   
+  
+    <a href="/2020/02/13/例子1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">例子1</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
   
 </nav>
 

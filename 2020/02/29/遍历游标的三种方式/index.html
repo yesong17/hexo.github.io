@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="叶颂">
 <meta property="og:description" content="遍历游标的三种方式废话不多说，上码！ 1234567891011121314151617181920212223242526272829CREATE OR REPLACE PROCEDURE PRC_LJ IS   CURSOR C_EMP IS --声明显式游标      SELECT EMPNO,ENAME FROM EMP;    C_ROW C_EMP%ROWTYPE; --定义游标变量，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-29T16:09:56.762Z">
+<meta property="og:updated_time" content="2020-02-29T16:39:53.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="遍历游标的三种方式">
 <meta name="twitter:description" content="遍历游标的三种方式废话不多说，上码！ 1234567891011121314151617181920212223242526272829CREATE OR REPLACE PROCEDURE PRC_LJ IS   CURSOR C_EMP IS --声明显式游标      SELECT EMPNO,ENAME FROM EMP;    C_ROW C_EMP%ROWTYPE; --定义游标变量，">
@@ -141,7 +141,7 @@
             
             <h3 id="遍历游标的三种方式"><a href="#遍历游标的三种方式" class="headerlink" title="遍历游标的三种方式"></a>遍历游标的三种方式</h3><p><strong>废话不多说，上码！</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">PROCEDURE</span> PRC_LJ <span class="keyword">IS</span> </span><br><span class="line">  <span class="keyword">CURSOR</span> C_EMP <span class="keyword">IS</span> <span class="comment">--声明显式游标  </span></span><br><span class="line">    <span class="keyword">SELECT</span> EMPNO,ENAME <span class="keyword">FROM</span> EMP;  </span><br><span class="line">  C_ROW C_EMP%ROWTYPE; <span class="comment">--定义游标变量，该变量的类型为基于游标C_EMP的记录  </span></span><br><span class="line"><span class="keyword">BEGIN</span> </span><br><span class="line">  <span class="comment">--For 循环  </span></span><br><span class="line">  <span class="keyword">FOR</span> C_ROW <span class="keyword">IN</span> C_EMP <span class="keyword">LOOP</span>  </span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(C_ROW.EMPNO || <span class="string">'--'</span> || C_ROW.ENAME);  </span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;  </span><br><span class="line"> </span><br><span class="line">  <span class="comment">--Fetch 循环  </span></span><br><span class="line">  OPEN C_EMP;<span class="comment">--必须要明确的打开和关闭游标  </span></span><br><span class="line">  LOOP  </span><br><span class="line">    FETCH C_EMP  </span><br><span class="line">      INTO C_ROW;  </span><br><span class="line">    EXIT WHEN C_EMP%NOTFOUND;  </span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(C_ROW.EMPNO || '++' || C_ROW.ENAME);  </span><br><span class="line">  <span class="keyword">END</span> <span class="keyword">LOOP</span>;  </span><br><span class="line">  CLOSE C_EMP;  </span><br><span class="line"> </span><br><span class="line">  <span class="comment">--While 循环  </span></span><br><span class="line">  OPEN C_EMP;<span class="comment">--必须要明确的打开和关闭游标  </span></span><br><span class="line">    FETCH C_EMP INTO C_ROW;  </span><br><span class="line">    WHILE C_EMP%FOUND LOOP  </span><br><span class="line">      DBMS_OUTPUT.PUT_LINE(C_ROW.EMPNO || '**' || C_ROW.ENAME);  </span><br><span class="line">      FETCH C_EMP INTO C_ROW;  </span><br><span class="line">    <span class="keyword">END</span> <span class="keyword">LOOP</span>;  </span><br><span class="line">  CLOSE C_EMP; </span><br><span class="line">  <span class="keyword">END</span> PRC_LJ;</span><br></pre></td></tr></table></figure>
-<font color="lightsalmon">第一种使用For 循环</font><br>for循环是比较简单实用的方法。<br>首先，它会自动open和close游标。解决了你忘记打开或关闭游标的烦恼。<br>其次,自动声明一个记录类型及定义该类型的变量，并自动fetch数据到这个变量。<br>注意C_ROW 这个变量无需要在循环外进行声明，无需为其指定数据类型。它是一个记录类型，具体的结构是由游标决定的。<br>这个变量的作用域仅仅是在循环体内。<br>最后，与该游标关联的所有记录都已经被取回后，循环无条件结束，不必判定游标的%NOTFOUND属性为TRUE。<br><font color="lightsalmon">for循环是用来循环游标的最好方法。高效，简洁，安全。</font>
+<font color="lightsalmon">for循环是比较简单实用的方法。</font><br>首先，它会自动open和close游标。解决了你忘记打开或关闭游标的烦恼。<br>其次,自动声明一个记录类型及定义该类型的变量，并自动fetch数据到这个变量。<br>注意C_ROW 这个变量无需要在循环外进行声明，无需为其指定数据类型。它是一个记录类型，具体的结构是由游标决定的。这个变量的作用域仅仅是在循环体内。<br>最后，与该游标关联的所有记录都已经被取回后，循环无条件结束，不必判定游标的%NOTFOUND属性为TRUE。<br><font color="lightsalmon">for循环是用来循环游标的最好方法。高效，简洁，安全。</font>
 
 <p><font color="lightsalmon">第二种使用Fetch循环</font><br>注意，exit when语句一定要紧跟在fetch之后，避免多余的数据处理。<br>处理逻辑需要跟在exit when之后。<br>循环结束后要记得关闭游标。</p>
 <p><font color="lightsalmon">第三种使用While循环</font><br>使用while 循环时，需要在循环之前进行一次fetch动作，游标的属性才会起作用。<br>而且数据处理动作必须放在循环体内的fetch方法之前，循环体内的fetch方法要放在最后，否则就会多处理一次。</p>
@@ -161,7 +161,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年03月01日 00:09</p>
+        <p>最后更新： 2020年03月01日 00:39</p>
         <p>原始链接： <a class="post-url" href="/2020/02/29/遍历游标的三种方式/" title="遍历游标的三种方式">https://yesong17.github.io/2020/02/29/遍历游标的三种方式/</a></p>
         <footer>
             <a href="https://yesong17.github.io">
@@ -285,6 +285,16 @@
     
 
 <nav id="article-nav">
+  
+    <a href="/2020/03/01/游标例子/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          游标例子
+        
+      </span>
+    </a>
   
   
     <a href="/2020/02/29/初识游标/" id="article-nav-older" class="article-nav-link-wrap">

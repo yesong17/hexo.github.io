@@ -1744,7 +1744,7 @@ body {
 .article-entry pre,
 .article-entry .highlight {
   background: #f6f8fa;
-  margin: 8px -15px;
+  margin: 8px 0px;
   padding: 15px 15px;
   border-style: solid;
   border-color: #ddd;

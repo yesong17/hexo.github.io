@@ -879,6 +879,7 @@ body {
   background: #fff;
   border-radius: 0;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  background-color: #00f;
 }
 .article-inner {
   overflow: inherit;

@@ -1727,7 +1727,7 @@ body {
   background: rgba(255,255,255,0.7);
   padding: 5px 0;
   border-top: 1px solid #ddd;
-  color: color-red;
+  color: #999;
 }
 #footer a {
   color: #258fb8;
@@ -1738,7 +1738,7 @@ body {
 }
 #footer-info {
   line-height: 1.6em;
-  font-size: 0.85em;
+  font-size: 2em;
   text-align: center;
 }
 .article-entry pre,

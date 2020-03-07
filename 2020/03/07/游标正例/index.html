@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="叶颂">
 <meta property="og:description" content="游标游标（cursor）是系统为用户开设的一个数据缓冲区，存放SQL语句的执行结果。每个游标区都有一个名字,用户可以用SQL语句逐一从游标中获取记录，并赋给主变量，交由主语言进一步处理。 游标是处理结果集的一种机制吧，它可以定位到结果集中的某一行，多数据进行读写，也可以移动游标定位到你所需要的行中进行操作数据。一般复杂的存储过程，都会有游标的出现，他的用处主要有：  定位到结果集中的某一行。 对当">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-07T05:54:12.501Z">
+<meta property="og:updated_time" content="2020-03-07T06:53:50.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="游标正例">
 <meta name="twitter:description" content="游标游标（cursor）是系统为用户开设的一个数据缓冲区，存放SQL语句的执行结果。每个游标区都有一个名字,用户可以用SQL语句逐一从游标中获取记录，并赋给主变量，交由主语言进一步处理。 游标是处理结果集的一种机制吧，它可以定位到结果集中的某一行，多数据进行读写，也可以移动游标定位到你所需要的行中进行操作数据。一般复杂的存储过程，都会有游标的出现，他的用处主要有：  定位到结果集中的某一行。 对当">
@@ -155,6 +155,11 @@
 </ul>
 <p><strong>注：</strong></p>
 <p>​        在能够使用游标前，必须声明/定义它，过程中没有检索数据，只是定义要使用的select语句一旦声明就必须打开游标 开始检索数据对于填有数据的游标，根据需要检索各行 取出数据必须关闭游标 再删除游标使用声明过的游标不需要再次声明，open打开就行了（只要没deallocate就行）</p>
+<ul>
+<li><font color="orangered">%FOUND </font> 检测游标结果集是否存在数据。</li>
+<li><font color="orangered">%NOTFOUND</font>  是否不存在数据。</li>
+<li><font color="orangered">%ROWCOUNT</font> 游标已提取的实际行数。</li>
+</ul>
 <p><strong>建立临时数据表</strong></p>
 <p>create table #tmp (Id NVARCHAR(MAX),UserName NVARCHAR(MAX),Password NVARCHAR(MAX),NickName NVARCHAR(MAX)) –创建临时表<br>SELECT * FROM #tmp; –查询临时表<br>DROP TABLE #tmp –删除临时表 </p>
 <p><strong>游标的生命周期</strong></p>
@@ -260,7 +265,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年03月07日 13:54</p>
+        <p>最后更新： 2020年03月07日 14:53</p>
         <p>原始链接： <a class="post-url" href="/2020/03/07/游标正例/" title="游标正例">https://yesong17.github.io/2020/03/07/游标正例/</a></p>
         <footer>
             <a href="https://yesong17.github.io">

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>awk用法 | 叶颂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="YeSong's Blog">
+  
+  <meta name="description" content="awkawk是一种编程语言，用于在linux/unix下对文本和数据进行处理。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。 awk语言的最基本功能是在文件或者字符串中基于指定规则浏览和抽取信息，awk抽取信息后，才能进行其他文本操作。完整的awk脚本通常用来格式化文本文件中的信息。 1awk &apos;&amp;#123;pattern + action&amp;#125;">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="awk用法">
+<meta property="og:url" content="https://yesong17.github.io/2020/03/09/awk用法/index.html">
+<meta property="og:site_name" content="叶颂">
+<meta property="og:description" content="awkawk是一种编程语言，用于在linux/unix下对文本和数据进行处理。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。 awk语言的最基本功能是在文件或者字符串中基于指定规则浏览和抽取信息，awk抽取信息后，才能进行其他文本操作。完整的awk脚本通常用来格式化文本文件中的信息。 1awk &apos;&amp;#123;pattern + action&amp;#125;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-09T14:56:41.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="awk用法">
+<meta name="twitter:description" content="awkawk是一种编程语言，用于在linux/unix下对文本和数据进行处理。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。 awk语言的最基本功能是在文件或者字符串中基于指定规则浏览和抽取信息，awk抽取信息后，才能进行其他文本操作。完整的awk脚本通常用来格式化文本文件中的信息。 1awk &apos;&amp;#123;pattern + action&amp;#125;">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">YeSong&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        YeSong&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        洞庭波兮木叶下
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="YeSong" target="_blank" href="//yesong17.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/yesong17">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/yesong17">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-awk用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      awk用法
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-03-09
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h3><p><strong>awk</strong>是一种编程语言，用于在linux/unix下对文本和数据进行处理。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。</p>
+<p><strong>awk</strong>语言的最基本功能是在文件或者字符串中基于指定规则浏览和抽取信息，awk抽取信息后，才能进行其他文本操作。完整的awk脚本通常用来格式化文本文件中的信息。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk '&#123;pattern + action&#125;' &#123;filenames&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>pattern [正则]表示 AWK 在数据中查找的内容</li>
+<li>action 是在找到匹配内容时所执行的一系列命令</li>
+<li>花括号（{}）不需要在程序中始终出现，但它们用于根据特定的<strong>模式</strong>对一系列指令进行分组。</li>
+</ul>
+<p><strong>模式</strong>可以是任何条件语句或复合语句或正则表达式，模式包含两个特殊字段 BEGIN 和 END，使用 BEGIN 语句设置计数和打印头，BEGIN 语句使用在任何文本浏览动作之前，之后文本浏览动作依据输入文件开始执行;END 语句用来在 awk 完成文本浏览动作后打印输出文本总数和结尾状态标志，有动作必须使用{}括起来</p>
+<h4 id="awk执行过程分析"><a href="#awk执行过程分析" class="headerlink" title="awk执行过程分析"></a>awk执行过程分析</h4><ol>
+<li><p>执行BEGIN { commands } pattern 语句块中的语句。</p>
+<p>​        BEGIN语句块：在awk开始从输入输出流中读取行之前执行，在BEGIN语句块中执行如变量初始化，打印输出表头等操作。</p>
+</li>
+<li><p>从文件或标准输入中读取一行，然后执行pattern{ commands }语句块。它逐行扫描文件，从第一行到最后一行重复这个过程，直到全部文件都被读取完毕。</p>
+<p>​        pattern语句块：pattern语句块中的通用命令是最重要的部分，它也是可选的。如果没有提供pattern语句块，则默认执行{ print }，即打印每一个读取到的行。{ }类似一个循环体，会对文件中的每一行进行迭代，通常将变量初始化语句放在BEGIN语句块中，将打印结果等语句放在END语句块中。</p>
+</li>
+<li><p>当读至输入流末尾时，执行END { command }语句块。</p>
+<p>​        END语句块:在awk从输入流中读取完所有的行之后即被执行，比如打印所有行的分析结果这类信息汇总都是在END语句块中完成，它也是一个可选语句块。</p>
+</li>
+</ol>
+<p><strong>注</strong>：awk 执行时，其浏览标记为$1，$2…$n，这种方法称为域标记。使用$1，$3 表示参照第 1 和第 3 域，注意这里使用逗号分隔域，使用$0 表示使用所有域。</p>
+<h4 id="AWK内置变量"><a href="#AWK内置变量" class="headerlink" title="AWK内置变量"></a>AWK内置变量</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">n : 当前记录的第n个字段，比如n为1表示第一个字段，n为2表示第二个字段。</span></span><br><span class="line"><span class="meta">$</span><span class="bash">0 : 这个变量包含执行过程中当前行的文本内容。</span></span><br><span class="line">ARGC : 命令行参数的数目。</span><br><span class="line">ARGIND : 命令行中当前文件的位置（从0开始算）。</span><br><span class="line">ARGV : 包含命令行参数的数组。</span><br><span class="line">CONVFMT : 数字转换格式（默认值为%.6g）。</span><br><span class="line">ENVIRON : 环境变量关联数组。</span><br><span class="line">ERRNO : 最后一个系统错误的描述。</span><br><span class="line">FIELDWIDTHS : 字段宽度列表（用空格键分隔）。</span><br><span class="line">FILENAME : 当前输入文件的名。</span><br><span class="line">NR : 表示记录数，在执行过程中对应于当前的行号</span><br><span class="line">FNR : 同NR :，但相对于当前文件。</span><br><span class="line">FS : 字段分隔符（默认是任何空格）。</span><br><span class="line">IGNORECASE : 如果为真，则进行忽略大小写的匹配。</span><br><span class="line">NF : 表示字段数，在执行过程中对应于当前的字段数。 print $NF答应一行中最后一个字段</span><br><span class="line">OFMT : 数字的输出格式（默认值是%.6g）。</span><br><span class="line">OFS : 输出字段分隔符（默认值是一个空格）。</span><br><span class="line">ORS : 输出记录分隔符（默认值是一个换行符）。</span><br><span class="line">RS : 记录分隔符（默认是一个换行符）。</span><br><span class="line">RSTART : 由match函数所匹配的字符串的第一个位置。</span><br><span class="line">RLENGTH : 由match函数所匹配的字符串的长度。</span><br><span class="line">SUBSEP : 数组下标分隔符（默认值是34）。</span><br></pre></td></tr></table></figure>
+<h4 id="awk运算"><a href="#awk运算" class="headerlink" title="awk运算"></a>awk运算</h4><ul>
+<li>算术运算：（+，-，*，/，&amp;，！，……，++，–）</li>
+</ul>
+<p>所有用作算术运算符进行操作时，操作数自动转为数值，所有非数值都变为0</p>
+<ul>
+<li>赋值运算：（=， +=， -=，*=，/=，%=，……=，**=）</li>
+<li>逻辑运算符: (||, &amp;&amp;)</li>
+<li>关系运算符：（&lt;, &lt;=, &gt;,&gt;=,!=, ==）</li>
+<li>正则运算符：（～，～!）(匹配正则表达式，与不匹配正则表达式)</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">awk 'BEGIN&#123;a="100testa";if(a ~ /^100*/)&#123;print "ok";&#125;&#125;'</span><br><span class="line">ok</span><br></pre></td></tr></table></figure>
+<h5 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h5><p>&lt;、&lt;=、==、!=、&gt;=、~匹配正则表达式、!~不匹配正则表达式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">匹配: 	awk '&#123;if ($4~/ASIMA/) print $0&#125;' temp 表示如果第四个域包含 ASIMA，就打印整条</span><br><span class="line">精确匹配:	awk '$3=="48" &#123;print $0&#125;' temp    只打印第 3 域等于"48"的记录</span><br><span class="line">不匹配:  	awk '$0 !~ /ASIMA/' temp      打印整条不包含 ASIMA 的记录</span><br><span class="line">不等于:  	awk '$1 != "asima"' temp</span><br><span class="line">小于:    	awk '&#123;if ($1&lt;$2) print $1 "is smaller"&#125;' temp</span><br><span class="line">设置大小写: 	awk '/[Gg]reen/' temp      打印整条包含 Green，或者 green 的记录</span><br><span class="line">任意字符: 	awk '$1 ~/^...a/' temp    打印第 1 域中第四个字符是 a 的记录，符号’^’代表行首，符合’.’代表任意字符</span><br><span class="line">或关系匹配: 	awk '$0~/(abc)|(efg)/' temp   使用|时，语句需要括起来</span><br><span class="line">AND 与关系:  awk '&#123;if ( $1=="a" &amp;&amp; $2=="b" ) print $0&#125;' temp</span><br><span class="line">OR 或关系:   awk '&#123;if ($1=="a" || $1=="b") print $0&#125;' temp</span><br></pre></td></tr></table></figure>
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><ul>
+<li>打开文件 open(“filename”)</li>
+<li>关闭文件 close(“filename”)</li>
+<li>输出到文件 重定向到文件，如echo | awk ‘{printf(“hello word!n”) &gt; “datafile”}’</li>
+</ul>
+<h4 id="将外部变量值传递给awk"><a href="#将外部变量值传递给awk" class="headerlink" title="将外部变量值传递给awk"></a>将外部变量值传递给awk</h4><ul>
+<li>借助 -v 选项，可以将来自外部值（非stdin）传递给awk       </li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VAR=10000</span><br><span class="line">echo | awk -v VARIABLE=$VAR '&#123; print VARIABLE &#125;'</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义内部变量接收外部变量</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var1="aaa"</span><br><span class="line">var2="bbb"</span><br><span class="line">echo | awk '&#123; print v1,v2 &#125;' v1=$var1 v2=$var2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当输入来自文件时</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk '&#123; print v1,v2 &#125;' v1=$var1 v2=$var2 filename</span><br></pre></td></tr></table></figure>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>在awk中数组叫做<strong>关联数组</strong>(associative arrays)。awk 中的数组不必提前声明，也不必声明大小。数组元素用0或空字符串来初始化，这根据上下文而定。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">awk '&#123;print $0&#125;' temp.txt &gt; sav.txt       表示打印所有域并把结果重定向到 sav.txt 中</span><br><span class="line">awk '&#123;print $0&#125;' temp.txt|tee sav.txt     和上例相似，不同的是将在屏幕上显示出来</span><br><span class="line">awk '&#123;print $1,$4&#125;' temp.txt      	      只打印出第 1 和第 4 域</span><br><span class="line">awk 'BEGIN &#123;print "NAME  GRADE\n----"&#125; &#123;print $1"\t"$4&#125;' temp.txt       </span><br><span class="line">	--表示打信息头，即输入的内容的第一行前加上"NAME  GRADE\n-------------"，同时内容以 tab 分开</span><br><span class="line">awk 'BEGIN &#123;print "being"&#125; &#123;print $1&#125; END &#123;print "end"&#125;' temp      同时打印信息头和信息尾</span><br><span class="line">awk -F ：'&#123;print $1,$4&#125;'          使用‘：’来分割这一行，把这一行的第一第四个域打印出来 。</span><br><span class="line">match(s，r)             测试s是否包含匹配r的字符串</span><br><span class="line">字符转换: echo "65" |awk '&#123;printf "%c\n"，$0&#125;'    输出A</span><br><span class="line">awk 'BEGIN &#123;printf "%f\n"，999&#125;'        输出999.000000</span><br><span class="line">格式化输出:awk '&#123;printf "%-15s %s\n"，$1，$3&#125;' temp 将第一个域全部左对齐显示</span><br></pre></td></tr></table></figure>
+<ul>
+<li>示例</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">找一个实操文件：  cp /etc/passwd ~</span><br><span class="line">打印2-5行：        nl passwd | sed -n '2,5p'</span><br><span class="line">打印奇数行：      nl passwd | sed -n '1~2p'</span><br><span class="line">"root" 全局替换为 "test"，并只打印替换的那一行：        sed -n 's/root/test/gp' passwd</span><br><span class="line">找出 root 的那一行并计算行号：      nl passwd | grep 'root'</span><br><span class="line">将 root 替换为 www.root.com：</span><br><span class="line"></span><br><span class="line">打印想要的数据列：</span><br><span class="line"></span><br><span class="line">格式：awk '/匹配串/ &#123;for(i=1;i&lt;=NF;i++) if($i ~ /字符串/) print $i i&#125;' $filename</span><br><span class="line">awk '/匹配串/ &#123;for(i=1;i&lt;=NF;i++) if($i ~ /(字符串1|...|字符串n)/) print $i i&#125;' $filename</span><br><span class="line">例子：awk '/WEB_TILE/ &#123;for(i=1;i&lt;=NF;i++) if($i ~ /(双线|单线)/) print $i i&#125;' t_config.txt</span><br><span class="line"></span><br><span class="line">打印某个域后的所有域（已知域个数）：【查看：cat file.txt】</span><br><span class="line">awk '&#123;for(i=4;i&lt;=NF;i++) printf"%s ",$i&#125; &#123;print ""&#125;' file.txt</span><br><span class="line">X1 X2 X3</span><br><span class="line">X1 X2 X3 X4 X5</span><br><span class="line">X1 X2 X3 X4 X5 X6</span><br><span class="line">这样的数据不够四行的，问题：将会打印出一个空行；在输出的结果中，每行结尾多了一个空格；</span><br><span class="line">解决：</span><br><span class="line">	awk 'NF&gt;4 &#123;for (i=4;i&lt;=NF;i++) &#123;printf $i" "&#125;printf "\n"&#125;' file.txt</span><br><span class="line">这个也行：cat file.txt |awk 'NF&gt;4 &#123;a=index($0,$4);print substr($0,a)&#125;'</span><br><span class="line"></span><br><span class="line">利用域值替换     //前3个域用字母a替换:</span><br><span class="line">	awk 'NF&gt;4 &#123; for(i=1;i&lt;=3;i++)&#123;$i="a"&#125;; print $0 &#125;' file.txt</span><br><span class="line">	</span><br><span class="line">awk打印倒数第2列:</span><br><span class="line">	cat 1-iplist.txt | awk '&#123; print $(NF-2) &#125;'|wc</span><br><span class="line">	awk -F":" '&#123;print $2,$(NF),$(NF-1),$(NF-3)&#125;' /etc/passwd</span><br><span class="line">	</span><br><span class="line">例如:我们需要查看 包含 sbin的进程 中的PID号:ps aux | grep sbin</span><br><span class="line">只过滤出所有的PID号：ps aux | grep sbin | awk '&#123;print $2&#125;'</span><br><span class="line">只获取前三行PID号：  【使用命令sed -n 指定行数；-n '2p':第二行；-n '1,3p':第一至三行】</span><br><span class="line">	ps aux | grep sbin | awk '&#123;print $2&#125;' | sed -n '1,3p'</span><br><span class="line">	</span><br><span class="line">打印文本文件的总行数 ： awk 'END&#123;print NR&#125;' filename</span><br><span class="line">打印文本第二行第一列 ：sed -n "2, 1p" filename | awk 'print $1'</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年03月09日 22:56</p>
+        <p>原始链接： <a class="post-url" href="/2020/03/09/awk用法/" title="awk用法">https://yesong17.github.io/2020/03/09/awk用法/</a></p>
+        <footer>
+            <a href="https://yesong17.github.io">
+                <img src="/images/logo.png" alt="Ys">
+                Ys
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃大餐~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yesong17.github.io/2020/03/09/awk用法/&title=《awk用法》 — 叶颂&pic=https://yesong17.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yesong17.github.io/2020/03/09/awk用法/&title=《awk用法》 — 叶颂&source=一定要爱上妾身哦" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yesong17.github.io/2020/03/09/awk用法/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《awk用法》 — 叶颂&url=https://yesong17.github.io/2020/03/09/awk用法/&via=https://yesong17.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yesong17.github.io/2020/03/09/awk用法/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yesong17.github.io/2020/03/09/awk用法/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Linux/" class="color1">Linux</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#awk"><span class="post-toc-text">awk</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#awk执行过程分析"><span class="post-toc-text">awk执行过程分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#AWK内置变量"><span class="post-toc-text">AWK内置变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#awk运算"><span class="post-toc-text">awk运算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#条件操作符"><span class="post-toc-text">条件操作符</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件操作"><span class="post-toc-text">文件操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将外部变量值传递给awk"><span class="post-toc-text">将外部变量值传递给awk</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数组"><span class="post-toc-text">数组</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/07/游标正例/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">游标正例</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Ys<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://yesong17.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/SQL-server/" style="font-size: 20px;">SQL server</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/SQL-server/" style="font-size: 20px;">SQL server</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

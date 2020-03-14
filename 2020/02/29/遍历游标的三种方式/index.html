@@ -87,7 +87,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -120,12 +120,32 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>Über</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Kategorien<span class="badge">0</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات<span class="badge">11</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>Zeitplan</a>
 
   </li>
   </ul>
@@ -179,16 +199,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-              <time title="أُنشأ: 2020-02-29 22:54:21" itemprop="dateCreated datePublished" datetime="2020-02-29T22:54:21+08:00">2020-02-29</time>
+              <time title="Erstellt: 2020-02-29 22:54:21" itemprop="dateCreated datePublished" datetime="2020-02-29T22:54:21+08:00">2020-02-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-03-14 10:46:18" itemprop="dateModified" datetime="2020-03-14T10:46:18+08:00">2020-03-14</time>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-03-14 10:46:18" itemprop="dateModified" datetime="2020-03-14T10:46:18+08:00">2020-03-14</time>
               </span>
 
           
@@ -225,19 +245,50 @@
     
     
     
+
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  
+	</div>
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Spenden
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat_code.png" alt="Ys WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay_code.png" alt="Ys Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
         
 
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>مؤلف المقال:  </strong>Ys
+    <strong>Beitragsautor:  </strong>Ys
   </li>
   <li class="post-copyright-link">
-    <strong>رابط المقال: </strong>
+    <strong>Beitragslink: </strong>
     <a href="https://yesong17.github.io/2020/02/29/遍历游标的三种方式/" title="遍历游标的三种方式">https://yesong17.github.io/2020/02/29/遍历游标的三种方式/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>حقوق الملكية:  </strong>حميع المقالات في هذه المدوّنة منشورة تحت رخصة <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> إلا عند التنويه بخلافه.
+    <strong>Urheberrechtshinweis:  </strong>Alle Artikel in diesem Blog sind unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> lizenziert, außer es wird anders angegeben.
   </li>
 </ul>
 </div>
@@ -245,7 +296,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/SQL-server/" rel="tag"># SQL server</a>
+              <a href="/tags/SQL-server/" rel="tag"><i class="fa fa-tag"></i># SQL server</a>
           </div>
 
         
@@ -311,10 +362,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
@@ -336,12 +387,12 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">11</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">الوسوم</span>
+        <span class="site-state-item-name">schlagwörter</span>
       </div>
   </nav>
 </div>
@@ -372,13 +423,8 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Ys</span>
+  <span class="author" itemprop="copyrightHolder">叶颂</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">الثمة – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.2
-  </div>
 
         
 
@@ -394,6 +440,8 @@
   </div>
 
   
+  
+  <script color="0,0,0" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -423,5 +471,8 @@
 
   
 
+  
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
 </body>
 </html>

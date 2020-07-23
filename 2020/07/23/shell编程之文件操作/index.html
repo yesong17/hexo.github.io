@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Fan主题安装 | 叶颂</title>
+  <title>shell编程之文件操作 | 叶颂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YeSong's Blog" />
   
-  <meta name="description" content="Fan 这是一个深色主题，如梦幻般的星空，群星闪烁。  Preview    安装1git clone https:&#x2F;&#x2F;github.com&#x2F;fan-lv&#x2F;Fan.git themes&#x2F;Fan 修改位于博客根目录下的_config.yml内的theme选项值为Fan 更新12cd themes&#x2F;Fangit pull  需要的依赖包 he">
+  <meta name="description" content="shell编程——文件操作文件操作非常常见，比如log日志查看，读写删除等。  Linux常见用法格式 删除7天前文件  find path -option [ -print ] [ -exec -ok command ] {} \; 12345678910111213141516171819202122232425262728293031find 命令参数：path: 查找路径 .当前目录 &#x2F;系">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fan主题安装">
-<meta property="og:url" content="https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="shell编程之文件操作">
+<meta property="og:url" content="https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="叶颂">
-<meta property="og:description" content="Fan 这是一个深色主题，如梦幻般的星空，群星闪烁。  Preview    安装1git clone https:&#x2F;&#x2F;github.com&#x2F;fan-lv&#x2F;Fan.git themes&#x2F;Fan 修改位于博客根目录下的_config.yml内的theme选项值为Fan 更新12cd themes&#x2F;Fangit pull  需要的依赖包 he">
+<meta property="og:description" content="shell编程——文件操作文件操作非常常见，比如log日志查看，读写删除等。  Linux常见用法格式 删除7天前文件  find path -option [ -print ] [ -exec -ok command ] {} \; 12345678910111213141516171819202122232425262728293031find 命令参数：path: 查找路径 .当前目录 &#x2F;系">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-14T02:46:18.485Z">
-<meta property="article:modified_time" content="2020-03-14T02:46:18.485Z">
+<meta property="article:published_time" content="2020-07-23T04:28:34.000Z">
+<meta property="article:modified_time" content="2020-07-23T04:28:34.606Z">
 <meta property="article:author" content="Ys">
+<meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
   
   
@@ -113,20 +114,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-Fan主题安装" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-shell编程之文件操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      Fan主题安装
+      shell编程之文件操作
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2020-03-14
+          <i class="fa fa-calendar"></i>  2020-07-23
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -142,30 +143,57 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 align="center">Fan</h1>
-<p align="center">这是一个深色主题，如梦幻般的星空，群星闪烁。</p>
+            <h3 id="shell编程——文件操作"><a href="#shell编程——文件操作" class="headerlink" title="shell编程——文件操作"></a>shell编程——文件操作</h3><p>文件操作非常常见，比如log日志查看，读写删除等。</p>
+<ul>
+<li>Linux常见用法格式 删除7天前文件</li>
+</ul>
+<p><code>find path -option [ -print ] [ -exec -ok command ] {} \;</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">find 命令参数：</span><br><span class="line">path: 查找路径 .当前目录 /系统根目录</span><br><span class="line">-exec：对匹配的文件执行该参数，相应形式为'-exec command &#123;&#125; \;'</span><br><span class="line">-ok: 和-exec 作用相同，区别是-ok更安全，执行命令前都会有提示 是否执行。</span><br><span class="line">-print: 将查找的文件输出到标准输出</span><br><span class="line">例如：'结果|xargs 命令' --&gt;xargs将结果放到后面的命令里</span><br><span class="line">==================================================================</span><br><span class="line">[find 目录 -name filename]</span><br><span class="line">-perm 755	#按执行权限来查找</span><br><span class="line">-user username	# 按文件属主查找  -group 按组</span><br><span class="line">-mtime -n/+n	#-n指n天以内，+n指n天前</span><br><span class="line">-atime -n/+n	#按文件访问时间来查</span><br><span class="line">-ctime -n/+n	#按文件创建时间来查 -1一天之内</span><br><span class="line">-nogroup 		#按无效属组 来查 -nouser</span><br><span class="line">-newer f1 !f2	#查找更改时间比f1新比f2旧的文件</span><br><span class="line">-type b/d/c/p/l/f	#查找块设备/目录/字符设备/管道/符号链接/普通文件</span><br><span class="line">-prune			#忽略某个目录</span><br><span class="line">-ftype vfat  	#查文件类型</span><br><span class="line">===================================================================</span><br><span class="line">find ~ -name "*.txt*" -print			#在$HOME中查txt文件并显示 .当前目录</span><br><span class="line">find . -name "[A-Z]*" -print			#查大写字母开头的文件 "host*"host开头</span><br><span class="line">find /etc -name "[a-z][a-z][0-9].txt"	#查以两个小写字母和一个数字开头的txt文件</span><br><span class="line">find . ! -type d -print					#查不是目录的数据</span><br><span class="line">find . -name "yao*"|xargs echo ""&gt;/core.log		#将查出结果写入log文件</span><br><span class="line">find /home -mmin +60                    #在/home下查60分钟前修改过的文件 -60</span><br><span class="line">find /home -atime -1                    #查1天之内被存取过的文件 -amin分钟内访问过的</span><br><span class="line">find /home -empty                       #查找大小为0的文件或空目录</span><br><span class="line">find /home -size +512k                  #查大于512k的文件  -512K</span><br><span class="line">find /home -links +2                    #查硬连接数大于2的文件或目录</span><br><span class="line">find /tmp -name tmp.txt -exec cat &#123;&#125; \;</span><br><span class="line">find /tmp -name tmp.txt -ok rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://www.lvfan.xyz/" target="_blank" rel="noopener">Preview</a>   </p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;fan-lv&#x2F;Fan.git themes&#x2F;Fan</span><br></pre></td></tr></table></figure>
-<p>修改位于博客根目录下的<code>_config.yml</code>内的<code>theme</code>选项值为<code>Fan</code></p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes&#x2F;Fan</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<h2 id="需要的依赖包"><a href="#需要的依赖包" class="headerlink" title="需要的依赖包"></a>需要的依赖包</h2><ul>
-<li>hexo-renderer-jade</li>
-<li>hexo-renderer-stylus</li>
+<ul>
+<li>通过$n形式的参数</li>
 </ul>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
-<li>如果报错 appId undefined,需要把 themes-&gt;_config.yml 中 algolia_search:enable 改成 false</li>
-</ul>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>支持文章置顶功能，在需要置顶的文章加入 top: 1，数值越大越靠前。</li>
-</ul>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a></p>
+<table>
+<thead>
+<tr>
+<th>param</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$#</td>
+<td>传递到脚本的参数个数</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>以一个单字符串显示所有向脚本传递的参数</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>脚本运行的当前进程ID号</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>后台运行的最后一个进程的ID号</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>与$*相同，但是使用时加引号，并在引号中返回每个参数。</td>
+</tr>
+<tr>
+<td>$-</td>
+<td>显示Shell使用的当前选项，与set命令功能相同。</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td>
+</tr>
+</tbody></table>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年03月14日 10:46</p>
-        <p>原始链接： <a class="post-url" href="/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" title="Fan主题安装">https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</a></p>
+        <p>最后更新： 2020年07月23日 12:28</p>
+        <p>原始链接： <a class="post-url" href="/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="shell编程之文件操作">https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</a></p>
         <footer>
             <a href="https://yesong17.github.io">
                 <img src="/images/logo.png" alt="Ys">
@@ -222,7 +250,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/&title=《Fan主题安装》 — 叶颂&pic=https://yesong17.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/&title=《shell编程之文件操作》 — 叶颂&pic=https://yesong17.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -232,22 +260,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/&title=《Fan主题安装》 — 叶颂&source=一定要爱上妾身哦" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/&title=《shell编程之文件操作》 — 叶颂&source=一定要爱上妾身哦" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Fan主题安装》 — 叶颂&url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/&via=https://yesong17.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《shell编程之文件操作》 — 叶颂&url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/&via=https://yesong17.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -257,7 +285,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -266,6 +294,13 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/shell/" class="color1">shell</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -275,26 +310,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-text">Fan</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新"><span class="post-toc-text">更新</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#需要的依赖包"><span class="post-toc-text">需要的依赖包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#License"><span class="post-toc-text">License</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shell编程——文件操作"><span class="post-toc-text">shell编程——文件操作</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2020/03/14/111/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          111
-        
-      </span>
-    </a>
   
-  
-    <a href="/2020/03/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Hello World</span>
+    <a href="/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">shell编程之sed用法</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   

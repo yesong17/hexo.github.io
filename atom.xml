@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yesong17.github.io/"/>
-  <updated>2020-07-23T04:11:07.407Z</updated>
+  <updated>2020-07-23T04:28:34.606Z</updated>
   <id>https://yesong17.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell编程之文件操作</title>
+    <link href="https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>https://yesong17.github.io/2020/07/23/shell编程之文件操作/</id>
+    <published>2020-07-23T04:28:34.000Z</published>
+    <updated>2020-07-23T04:28:34.606Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="shell编程——文件操作"><a href="#shell编程——文件操作" class="headerlink" title="shell编程——文件操作"></a>shell编程——文件操作</h3><p>文件操作非常常见，比如log日志查看，读写删除等。</p><ul><li>Linux常见用法格式 删除7天前文件</li></ul><p><code>find path -option [ -print ] [ -exec -ok command ] {} \;</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">find 命令参数：</span><br><span class="line">path: 查找路径 .当前目录 /系统根目录</span><br><span class="line">-exec：对匹配的文件执行该参数，相应形式为'-exec command &#123;&#125; \;'</span><br><span class="line">-ok: 和-exec 作用相同，区别是-ok更安全，执行命令前都会有提示 是否执行。</span><br><span class="line">-print: 将查找的文件输出到标准输出</span><br><span class="line">例如：'结果|xargs 命令' --&gt;xargs将结果放到后面的命令里</span><br><span class="line">==================================================================</span><br><span class="line">[find 目录 -name filename]</span><br><span class="line">-perm 755#按执行权限来查找</span><br><span class="line">-user username# 按文件属主查找  -group 按组</span><br><span class="line">-mtime -n/+n#-n指n天以内，+n指n天前</span><br><span class="line">-atime -n/+n#按文件访问时间来查</span><br><span class="line">-ctime -n/+n#按文件创建时间来查 -1一天之内</span><br><span class="line">-nogroup #按无效属组 来查 -nouser</span><br><span class="line">-newer f1 !f2#查找更改时间比f1新比f2旧的文件</span><br><span class="line">-type b/d/c/p/l/f#查找块设备/目录/字符设备/管道/符号链接/普通文件</span><br><span class="line">-prune#忽略某个目录</span><br><span class="line">-ftype vfat  #查文件类型</span><br><span class="line">===================================================================</span><br><span class="line">find ~ -name "*.txt*" -print#在$HOME中查txt文件并显示 .当前目录</span><br><span class="line">find . -name "[A-Z]*" -print#查大写字母开头的文件 "host*"host开头</span><br><span class="line">find /etc -name "[a-z][a-z][0-9].txt"#查以两个小写字母和一个数字开头的txt文件</span><br><span class="line">find . ! -type d -print#查不是目录的数据</span><br><span class="line">find . -name "yao*"|xargs echo ""&gt;/core.log#将查出结果写入log文件</span><br><span class="line">find /home -mmin +60                    #在/home下查60分钟前修改过的文件 -60</span><br><span class="line">find /home -atime -1                    #查1天之内被存取过的文件 -amin分钟内访问过的</span><br><span class="line">find /home -empty                       #查找大小为0的文件或空目录</span><br><span class="line">find /home -size +512k                  #查大于512k的文件  -512K</span><br><span class="line">find /home -links +2                    #查硬连接数大于2的文件或目录</span><br><span class="line">find /tmp -name tmp.txt -exec cat &#123;&#125; \;</span><br><span class="line">find /tmp -name tmp.txt -ok rm &#123;&#125; \;</span><br></pre></td></tr></table></figure><ul><li>通过$n形式的参数</li></ul><table><thead><tr><th>param</th><th>description</th></tr></thead><tbody><tr><td>$#</td><td>传递到脚本的参数个数</td></tr><tr><td>$*</td><td>以一个单字符串显示所有向脚本传递的参数</td></tr><tr><td>$$</td><td>脚本运行的当前进程ID号</td></tr><tr><td>$!</td><td>后台运行的最后一个进程的ID号</td></tr><tr><td>$@</td><td>与$*相同，但是使用时加引号，并在引号中返回每个参数。</td></tr><tr><td>$-</td><td>显示Shell使用的当前选项，与set命令功能相同。</td></tr><tr><td>$?</td><td>显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;shell编程——文件操作&quot;&gt;&lt;a href=&quot;#shell编程——文件操作&quot; class=&quot;headerlink&quot; title=&quot;shell编程——文件操作&quot;&gt;&lt;/a&gt;shell编程——文件操作&lt;/h3&gt;&lt;p&gt;文件操作非常常见，比如log日志查看，读写删除等。&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="shell" scheme="https://yesong17.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>shell编程之sed用法</title>

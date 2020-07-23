@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yesong17.github.io/"/>
-  <updated>2020-03-14T03:01:27.030Z</updated>
+  <updated>2020-07-23T04:11:07.407Z</updated>
   <id>https://yesong17.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell编程之sed用法</title>
+    <link href="https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/"/>
+    <id>https://yesong17.github.io/2020/07/23/shell编程之sed用法/</id>
+    <published>2020-07-23T04:11:07.000Z</published>
+    <updated>2020-07-23T04:11:07.407Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="shell编程——sed用法"><a href="#shell编程——sed用法" class="headerlink" title="shell编程——sed用法"></a>shell编程——sed用法</h3><p><code>sed -i &#39;4s/$/&amp; shell/&#39; ss.md</code></p><ul><li>往sed传入外部变量<ul><li>使用双引号：var=cat;echo </li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;shell编程——sed用法&quot;&gt;&lt;a href=&quot;#shell编程——sed用法&quot; class=&quot;headerlink&quot; title=&quot;shell编程——sed用法&quot;&gt;&lt;/a&gt;shell编程——sed用法&lt;/h3&gt;&lt;p&gt;&lt;code&gt;sed -i &amp;#39;4s/$
+      
+    
+    </summary>
+    
+    
+    
+      <category term="shell" scheme="https://yesong17.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>111</title>

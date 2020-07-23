@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Fan主题安装 | 叶颂</title>
+  <title>shell编程之sed用法 | 叶颂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YeSong's Blog" />
   
-  <meta name="description" content="Fan 这是一个深色主题，如梦幻般的星空，群星闪烁。  Preview    安装1git clone https:&#x2F;&#x2F;github.com&#x2F;fan-lv&#x2F;Fan.git themes&#x2F;Fan 修改位于博客根目录下的_config.yml内的theme选项值为Fan 更新12cd themes&#x2F;Fangit pull  需要的依赖包 he">
+  <meta name="description" content="shell编程——sed用法sed -i &#39;4s&#x2F;$&#x2F;&amp; shell&#x2F;&#39; ss.md  往sed传入外部变量 使用双引号：var&#x3D;cat;echo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fan主题安装">
-<meta property="og:url" content="https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="shell编程之sed用法">
+<meta property="og:url" content="https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="叶颂">
-<meta property="og:description" content="Fan 这是一个深色主题，如梦幻般的星空，群星闪烁。  Preview    安装1git clone https:&#x2F;&#x2F;github.com&#x2F;fan-lv&#x2F;Fan.git themes&#x2F;Fan 修改位于博客根目录下的_config.yml内的theme选项值为Fan 更新12cd themes&#x2F;Fangit pull  需要的依赖包 he">
+<meta property="og:description" content="shell编程——sed用法sed -i &#39;4s&#x2F;$&#x2F;&amp; shell&#x2F;&#39; ss.md  往sed传入外部变量 使用双引号：var&#x3D;cat;echo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-14T02:46:18.485Z">
-<meta property="article:modified_time" content="2020-03-14T02:46:18.485Z">
+<meta property="article:published_time" content="2020-07-23T04:11:07.000Z">
+<meta property="article:modified_time" content="2020-07-23T04:11:07.407Z">
 <meta property="article:author" content="Ys">
+<meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
   
   
@@ -113,20 +114,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-Fan主题安装" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-shell编程之sed用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      Fan主题安装
+      shell编程之sed用法
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2020-03-14
+          <i class="fa fa-calendar"></i>  2020-07-23
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -142,30 +143,18 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 align="center">Fan</h1>
-<p align="center">这是一个深色主题，如梦幻般的星空，群星闪烁。</p>
-
-<p><a href="https://www.lvfan.xyz/" target="_blank" rel="noopener">Preview</a>   </p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;fan-lv&#x2F;Fan.git themes&#x2F;Fan</span><br></pre></td></tr></table></figure>
-<p>修改位于博客根目录下的<code>_config.yml</code>内的<code>theme</code>选项值为<code>Fan</code></p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes&#x2F;Fan</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<h2 id="需要的依赖包"><a href="#需要的依赖包" class="headerlink" title="需要的依赖包"></a>需要的依赖包</h2><ul>
-<li>hexo-renderer-jade</li>
-<li>hexo-renderer-stylus</li>
+            <h3 id="shell编程——sed用法"><a href="#shell编程——sed用法" class="headerlink" title="shell编程——sed用法"></a>shell编程——sed用法</h3><p><code>sed -i &#39;4s/$/&amp; shell/&#39; ss.md</code></p>
+<ul>
+<li>往sed传入外部变量<ul>
+<li>使用双引号：var=cat;echo </li>
 </ul>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
-<li>如果报错 appId undefined,需要把 themes-&gt;_config.yml 中 algolia_search:enable 改成 false</li>
+</li>
 </ul>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>支持文章置顶功能，在需要置顶的文章加入 top: 1，数值越大越靠前。</li>
-</ul>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p><a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年03月14日 10:46</p>
-        <p>原始链接： <a class="post-url" href="/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" title="Fan主题安装">https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</a></p>
+        <p>最后更新： 2020年07月23日 12:11</p>
+        <p>原始链接： <a class="post-url" href="/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/" title="shell编程之sed用法">https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/</a></p>
         <footer>
             <a href="https://yesong17.github.io">
                 <img src="/images/logo.png" alt="Ys">
@@ -222,7 +211,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/&title=《Fan主题安装》 — 叶颂&pic=https://yesong17.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/&title=《shell编程之sed用法》 — 叶颂&pic=https://yesong17.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -232,22 +221,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/&title=《Fan主题安装》 — 叶颂&source=一定要爱上妾身哦" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/&title=《shell编程之sed用法》 — 叶颂&source=一定要爱上妾身哦" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Fan主题安装》 — 叶颂&url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/&via=https://yesong17.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《shell编程之sed用法》 — 叶颂&url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/&via=https://yesong17.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -257,7 +246,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yesong17.github.io/2020/03/14/Fan%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yesong17.github.io/2020/07/23/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bsed%E7%94%A8%E6%B3%95/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -266,6 +255,13 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/shell/" class="color1">shell</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -275,26 +271,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#"><span class="post-toc-text">Fan</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新"><span class="post-toc-text">更新</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#需要的依赖包"><span class="post-toc-text">需要的依赖包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#License"><span class="post-toc-text">License</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shell编程——sed用法"><span class="post-toc-text">shell编程——sed用法</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2020/03/14/111/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          111
-        
-      </span>
-    </a>
   
-  
-    <a href="/2020/03/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Hello World</span>
+    <a href="/2020/03/14/111/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">111</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
